@@ -21,9 +21,9 @@ botocore
 fastapi
 uvicorn
 jinja2
-python-multipart
+python-multipart 
+python-dotenv
 -e .
-
 
 
 
