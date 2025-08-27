@@ -2,12 +2,13 @@ import sys
 from us_visa.exception import USvisaException
 from us_visa.logger import logging
 
-logging.info("Hello, World!")
+from us_visa.pipline.training_pipeline import TrainPipeline
 
 
-try:
-    a = 2/0
 
-except Exception as e:
-    raise USvisaException(e, sys)
+
+pipline  = TrainPipeline()
+pipline.run_pipeline()
+
+
 
