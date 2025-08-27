@@ -1,12 +1,11 @@
-import sys
-import os
-from us_visa.configuration.mango_connection import MangoDBClient
+from us_visa.configuration.mongo_db_connection import MongoDBClient
 from us_visa.constants import DATABASE_NAME
 from us_visa.exception import USvisaException
-from us_visa.logger import logging
 import pandas as pd
+import sys
 from typing import Optional
 import numpy as np
+
 
 
 class USvisaData:
@@ -18,7 +17,7 @@ class USvisaData:
         """
         """
         try:
-            self.mongo_client = MangoDBClient(database_name=DATABASE_NAME)
+            self.mongo_client = MongoDBClient(database_name=DATABASE_NAME)
         except Exception as e:
             raise USvisaException(e,sys)
         
