@@ -1,16 +1,14 @@
 import os
 from datetime import date
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 
 DATABASE_NAME = "US_VISA"
 
 COLLECTION_NAME = "visa_data"
 
 
-MONGODB_URL_KEY = "mongodb+srv://susantkumar:susantkumar@cluster0.nk5es8q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGODB_URL_KEY = "MONGODB_URI"
 
 
 PIPELINE_NAME: str = "usvisa"
