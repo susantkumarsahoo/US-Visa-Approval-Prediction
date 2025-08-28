@@ -3,6 +3,16 @@ from datetime import date
 import os
 
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+mongo_db_url = os.getenv("MONGODB_URI")
+
+
+
+
 DATABASE_NAME = "US_VISA"
 
 COLLECTION_NAME = "visa_data"
