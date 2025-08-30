@@ -5,11 +5,9 @@ import numpy as np
 import dill
 import yaml
 from pandas import DataFrame
-import pandas as pd
 
 from us_visa.exception import USvisaException
 from us_visa.logger import logging
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 
 def read_yaml_file(file_path: str) -> dict:
@@ -107,41 +105,6 @@ def drop_columns(df: DataFrame, cols: list)-> DataFrame:
         return df
     except Exception as e:
         raise USvisaException(e, sys) from e
-    
-
-
-def evaluate_model(y_true, y_pred) -> dict:
-    logging.info("Exited the drop_columns method of utils")
-    """
-    Evaluate model performance using common classification metrics.
-    """
-    try:
-        metrics = {
-            "accuracy": accuracy_score(y_true, y_pred),
-            "precision": precision_score(y_true, y_pred, average="weighted"),
-            "recall": recall_score(y_true, y_pred, average="weighted"),
-            "f1_score": f1_score(y_true, y_pred, average="weighted")
-        }
-        logging.info(f"Evaluation Metrics: {metrics}")
-        return metrics
-
-    except Exception as e:
-        raise USvisaException(e, sys)
-
-
-
-def load_data(file_path: str) -> pd.DataFrame:
-    logging.info("Exited the drop_columns method of utils")
-    """
-    Load dataset from CSV.
-    """
-    try:
-        df = pd.read_csv(file_path)
-        logging.info(f"Dataset loaded successfully from {file_path}, shape={df.shape}")
-        return df
-
-    except Exception as e:
-        raise USvisaException(e, sys)
     
 
 
